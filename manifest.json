@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Happy Hack Chrome",
+  "description": "Provides history search, tab search, and Chrome operations stuff.",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "history",
+    "bookmarks"
+  ],
+  "web_accessible_resources": [
+    "index.html",
+    "index.js"
+  ],
+  "background": {
+    "scripts": ["./background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["./inject.js"]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 const style = {
   padding: '0px',
@@ -15,9 +15,7 @@ const style = {
 }
 
 const Layout: React.FC = () => (
-  <div style={style}>
-    happy-hack-chrome
-  </div>
+  <p>happy-hack-chrome</p>
 )
 
 export default Layout

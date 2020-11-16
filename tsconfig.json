@@ -1,5 +1,20 @@
 {
   "compilerOptions": {
-    "jsx": "react"
-  }
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es6"
+    ],
+    "jsxFactory": "jsx",
+  },
+  "include": [
+    "src"
+  ],
+  "compileOnSave": false,
+  "allowSyntheticDefaultImports": true,
 }
