@@ -1,16 +1,23 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider, Heading } from 'theme-ui'
 import React from 'react'
+import { CacheProvider, jsx } from '@emotion/react'
+import createCache from '@emotion/cache'
 
-import theme from './theme.js'
 import Layout from './components/layout'
 
-console.log(theme)
+interface Props {
+  emotionMountPoint: HTMLElement
+}
 
-const App: React.FC = () => (
-  <ThemeProvider theme={theme}>
-    <Heading>hoge</Heading>
-  </ThemeProvider>
-)
+const App: React.FC<Props> = ({ emotionMountPoint }) => {
+  const emotionCache = createCache({
+    key: 'my-prefix-key',
+    container: emotionMountPoint
+  })
+
+  return <CacheProvider value={emotionCache}>
+    <Layout />
+  </CacheProvider>
+}
 
 export default App
