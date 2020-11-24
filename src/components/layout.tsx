@@ -20,13 +20,13 @@ const layoutStyle: Interpolation<CSSObject> = {
   left: '0',
   right: '0',
   margin: '0 auto',
-  zindex: '2147483647',
+  zIndex: '2147483647',
+  padding: '10px 14px',
   borderRadius: '14px',
 }
 
 const Layout: React.FC = ({ children }) => {
   const theme = useTheme()
-
   return <div css={{...layoutStyle,
     background: theme.colors.background,
     color: theme.colors.text,

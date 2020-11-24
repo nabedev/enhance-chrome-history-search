@@ -8,14 +8,23 @@
   "license": "MIT",
   "dependencies": {
     "@emotion/cache": "^11.0.0",
-    "@emotion/react": "^11.1.0",
+    "@emotion/react": "^11.1.1",
+    "chrome": "^0.1.0",
+    "fuse.js": "^6.4.3",
     "react": ">=16.8.0",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-select": "^3.1.0"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.126",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "parcel-bundler": "^1.12.4",
+    "react-icons": "^3.11.0",
     "typescript": "^4.0.5"
+  },
+  "scripts": {
+    "dev": "parcel watch ./src/index.js ./src/background.js ./src/hot-reload.js ./manifest.json -o index.js background.js hot-reload.js manifest.json",
+    "build": "parcel build ./src/index.js ./src/background.js ./manifest.json -o index.js background.js manifest.json"
   }
 }

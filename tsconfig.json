@@ -11,6 +11,7 @@
       "es6"
     ],
     "jsxFactory": "jsx",
+    "jsxFragmentFactory": "Fragment"
   },
   "include": [
     "src"

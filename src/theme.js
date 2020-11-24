@@ -1,13 +1,13 @@
 export const theme = {
   colors: {
-    text: 'hsl(210, 50%, 96%)',
-    background: 'hsl(230, 25%, 18%)',
+    text: '#f0f5f9',
+    background: '#1e2022',
     primary: 'hsl(260, 100%, 80%)',
     secondary: 'hsl(290, 100%, 80%)',
-    highlight: 'hsl(260, 20%, 40%)',
+    highlight: '#4A4C4E',
     purple: 'hsl(290, 100%, 80%)',
     muted: 'hsla(230, 20%, 0%, 20%)',
-    gray: 'hsl(210, 50%, 60%)'
+    gray: '#52616b'
   },
   fonts: {
     body: 'system-ui',

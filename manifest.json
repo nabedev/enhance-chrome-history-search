@@ -4,23 +4,17 @@
   "description": "Provides history search, tab search, and Chrome operations stuff.",
   "version": "1.0",
   "permissions": [
-    "activeTab",
-    "tabs",
     "history",
-    "bookmarks"
+    "chrome://favicon/"
   ],
-  "web_accessible_resources": [
-    "index.html",
-    "index.js"
-  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'; img-src chrome://favicon;",
   "background": {
-    "scripts": ["./background.js"]
+    "scripts": ["./background.js", "./hot-reload.js"]
   },
-
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["./inject.js"]
+      "js": ["./index.js"]
     }
   ]
 }
