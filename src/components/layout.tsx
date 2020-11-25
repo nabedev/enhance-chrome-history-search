@@ -22,18 +22,23 @@ const layoutStyle: Interpolation<CSSObject> = {
   margin: '0 auto',
   zIndex: '2147483647',
   padding: '10px 14px',
-  borderRadius: '14px',
+  borderRadius: '14px'
 }
 
 const Layout: React.FC = ({ children }) => {
   const theme = useTheme()
-  return <div css={{...layoutStyle,
-    background: theme.colors.background,
-    color: theme.colors.text,
-    fontFamily: theme.fonts.body,
-    }}>
-    {children}
-  </div>
+  return (
+    <div
+      css={{
+        ...layoutStyle,
+        background: theme.colors.background,
+        color: theme.colors.text,
+        fontFamily: theme.fonts.body
+      }}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default Layout

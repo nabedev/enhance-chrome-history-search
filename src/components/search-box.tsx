@@ -18,38 +18,36 @@ const SearchBox: React.FC = () => {
   const filterdChromeHistories = useHistoryFilter(chromeHistories)
   const attachedFaviconHitories = useFavicon(filterdChromeHistories)
 
-  const [filterdHistories, setFilterdHistories] = useState<chrome.history.HistoryItem[]>([])
+  const [filterdHistories, setFilterdHistories] = useState<
+    chrome.history.HistoryItem[]
+  >([])
   const handleChange = (event) => {
     const options = {
-      threshold: 0.5,
-      includeScore: true,
-      keys: [
-        "url",
-        "title"
-      ]
+      useExtendedSearch: true,
+      keys: ['url']
     }
-    const fuse = new Fuse(attachedFaviconHitories, options);
-    const results = fuse.search(event.target.value)
-    const histories = results.map(result => result.item)
+    console.log(attachedFaviconHitories)
+    const fuse = new Fuse(attachedFaviconHitories, options)
+    const results = fuse.search(`'${event.target.value}`)
+    const histories = results.map((result) => result.item)
     setFilterdHistories(histories)
   }
 
-  return <>
-    <Flex css={{ alignItems: 'center', fontSize: '32px' }}>
-      <BiSearch css={{ color: theme.colors.grey }}/>
-      <Input
-        placeholder="search"
-        onChange={handleChange}
-      />
-    </Flex>
+  return (
+    <>
+      <Flex css={{ alignItems: 'center', fontSize: '32px' }}>
+        <BiSearch css={{ color: theme.colors.grey }} />
+        <Input placeholder="search" onChange={handleChange} />
+      </Flex>
 
-    {filterdHistories.length > 0 &&
-      <>
-      <Divider />
-      <List histories={filterdHistories} />
-      </>
-    }
-  </>
+      {filterdHistories.length > 0 && (
+        <>
+          <Divider />
+          <List histories={filterdHistories} />
+        </>
+      )}
+    </>
+  )
 }
 
 export default SearchBox

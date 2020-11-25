@@ -6,6 +6,4 @@ const isNotGoogleSearchPage = (history) => {
   return !history.url.startsWith('https://www.google.com/search')
 }
 
-export default [
-  isNotGoogleSearchPage,
-]
+export default [isNotGoogleSearchPage]

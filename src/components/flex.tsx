@@ -2,10 +2,16 @@
 import { jsx } from '@emotion/react'
 import React, { HTMLAttributes } from 'react'
 
-const Flex: React.FC<HTMLAttributes<HTMLElement>> = ({ children, ...props }) => (
-  <div css={{
-    display: 'flex',
-  }} {...props}>
+const Flex: React.FC<HTMLAttributes<HTMLElement>> = ({
+  children,
+  ...props
+}) => (
+  <div
+    css={{
+      display: 'flex'
+    }}
+    {...props}
+  >
     {children}
   </div>
 )

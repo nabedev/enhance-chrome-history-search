@@ -1,14 +1,13 @@
-
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'fetchHistory') {
-    chrome.history.search({text: '', startTime: 0}, function(data) {
+    chrome.history.search({ text: '', startTime: 0 }, function (data) {
       sendResponse(data)
     })
   }
 
   if (request.action === 'fetchFavicon') {
     const xhr = new XMLHttpRequest()
-    xhr.onload = data => {
+    xhr.onload = (data) => {
       const reader = new FileReader()
       reader.onloadend = (file) => {
         const base64 = btoa(file.target.result)

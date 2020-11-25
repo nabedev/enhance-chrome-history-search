@@ -25,11 +25,9 @@ shadowRoot.append(slot)
 
 document.body.appendChild(shadowHost)
 
-window.addEventListener('keydown', e => {
+window.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.key === 'p') {
-   !ReactDOM.unmountComponentAtNode(appRoot) && ReactDOM.render(
-      <App emotionMountPoint={shadowRoot} />,
-      appRoot
-    )
+    !ReactDOM.unmountComponentAtNode(appRoot) &&
+      ReactDOM.render(<App emotionMountPoint={shadowRoot} />, appRoot)
   }
 })

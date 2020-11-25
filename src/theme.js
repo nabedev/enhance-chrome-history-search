@@ -13,5 +13,5 @@ export const theme = {
     body: 'system-ui',
     heading: 'inherit',
     monospace: 'Menlo, monospace'
-  },
+  }
 }

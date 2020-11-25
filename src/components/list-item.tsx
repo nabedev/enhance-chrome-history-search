@@ -8,9 +8,16 @@ interface Props {
 
 const ListItem: React.FC<CSSProperties & Props> = ({ children, selected }) => {
   const theme = useTheme()
-  return <div css={{ background: selected && theme.colors.highlight, padding: '4px 8px' }}>
-    {children}
-  </div>
+  return (
+    <div
+      css={{
+        background: selected && theme.colors.highlight,
+        padding: '4px 8px'
+      }}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default ListItem

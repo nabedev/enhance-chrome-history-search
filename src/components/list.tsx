@@ -13,12 +13,16 @@ const List: React.FC<CSSProperties & Props> = ({ children, histories }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const handleKeyDown = (e) => {
-    switch(e.key) {
+    switch (e.key) {
       case 'ArrowDown':
-        setSelectedIndex(selectedIndex < histories.length - 1 ? selectedIndex + 1 : 0)
+        setSelectedIndex(
+          selectedIndex < histories.length - 1 ? selectedIndex + 1 : 0
+        )
         break
       case 'ArrowUp':
-        setSelectedIndex(selectedIndex - 1 > - 1 ? selectedIndex - 1 : histories.length - 1)
+        setSelectedIndex(
+          selectedIndex - 1 > -1 ? selectedIndex - 1 : histories.length - 1
+        )
         break
       case 'Enter':
         window.location.href = histories[selectedIndex].url
@@ -40,21 +44,35 @@ const List: React.FC<CSSProperties & Props> = ({ children, histories }) => {
     }
   }, [handleKeyDown])
 
-  return <Flex css={{ flexDirection: 'column', overflow: 'scroll', maxHeight: '480px', fontSize:'16px' }}>
-    {histories && histories.map((history, key) => (
-      <ListItem selected={key === selectedIndex}>
-        <Flex css={{ alignItems: 'center' }}>
-        <img src={history.favicon} />
-        <Flex css={{ flexDirection: 'column', marginLeft: '8px' }}>
-          <div>{history.title}</div>
-          <div css={{
-            color: 'grey'
-          }}>{history.url}</div>
-        </Flex>
-        </Flex>
-      </ListItem>
-    ))}
-  </Flex>
+  return (
+    <Flex
+      css={{
+        flexDirection: 'column',
+        overflow: 'scroll',
+        maxHeight: '480px',
+        fontSize: '16px'
+      }}
+    >
+      {histories &&
+        histories.map((history, key) => (
+          <ListItem selected={key === selectedIndex}>
+            <Flex css={{ alignItems: 'center' }}>
+              <img src={history.favicon} />
+              <Flex css={{ flexDirection: 'column', marginLeft: '8px' }}>
+                <div>{history.title}</div>
+                <div
+                  css={{
+                    color: 'grey'
+                  }}
+                >
+                  {history.url}
+                </div>
+              </Flex>
+            </Flex>
+          </ListItem>
+        ))}
+    </Flex>
+  )
 }
 
 export default List
