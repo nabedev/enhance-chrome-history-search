@@ -26,7 +26,7 @@ const SearchBox: React.FC = () => {
       useExtendedSearch: true,
       keys: ['url']
     }
-    console.log(attachedFaviconHitories)
+
     const fuse = new Fuse(attachedFaviconHitories, options)
     const results = fuse.search(`'${event.target.value}`)
     const histories = results.map((result) => result.item)
