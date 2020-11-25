@@ -1,5 +1,5 @@
 ## Demo
-
+![enhance-chrome-history-demo.gif](enhance-chrome-history-demo.gif)
 
 ## Usage
 ```
